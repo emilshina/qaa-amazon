@@ -10,8 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.function.Function;
 
-import static io.github.sskorol.core.WaitCondition.allPresent;
-import static io.github.sskorol.core.WaitCondition.visible;
+import static io.github.sskorol.core.WaitCondition.*;
 import static io.github.sskorol.listeners.BaseListener.getDriverMetaData;
 import static io.github.sskorol.utils.ElementTypeUtils.elementOf;
 import static io.github.sskorol.utils.ElementTypeUtils.streamOf;
@@ -41,6 +40,10 @@ public abstract class BasePage implements Page {
 
     protected void type(final By locator, final CharSequence text) {
         type(locator, text, visible);
+    }
+
+    protected void click(final By locator) {
+        elementOf(waitFor(locator, "", enabled)).click();
     }
 
     protected void select(final By locator, final String text) {

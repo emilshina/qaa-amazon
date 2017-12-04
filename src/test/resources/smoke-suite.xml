@@ -2,9 +2,9 @@
 <suite name="Smoke">
 	<test name="Chrome group">
 		<parameter name="browserName" value="chrome"/>
-		<parameter name="platform" value="LINUX"/>
+		<parameter name="platform" value="ANY"/>
 		<classes>
-			<class name="io.github.sskorol.testcases.GoogleTests"/>
+			<class name="io.github.sskorol.testcases.AmazonTests"/>
 		</classes>
 	</test>
 </suite>
